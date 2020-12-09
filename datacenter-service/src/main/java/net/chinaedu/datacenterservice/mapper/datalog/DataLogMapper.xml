@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.chinaedu.datacenterservice.mapper.datalog.DataLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="dataLogMap" type="net.chinaedu.datacentercore.domain.DataLog">
+        <id column="id" property="id" />
+        <result column="data_type" property="dataType" />
+        <result column="remark" property="remark" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!--以下是新增的方法-->
+    <select id="listAll" resultMap="dataLogMap">
+        select id,data_type,remark,create_time from dc_data_log;
+    </select>
+
+</mapper>
